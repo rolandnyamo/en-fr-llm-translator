@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Translator • Results</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Translated Files</h1>
+      <a class="link" href="/">← Translate more</a>
+
+      <ul class="results">
+        {% for r in results %}
+          <li class="card result">
+            <div>
+              <div class="file">{{ r.source_name }}</div>
+              <div class="muted">Direction: {{ r.direction }}</div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="{{ r.output_url }}" target="_blank">Open</a>
+              <a class="btn secondary" href="{{ r.output_url }}" download>Download</a>
+              <span class="muted filename">{{ r.output_name }}</span>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </main>
+  </body>
+  </html>
+

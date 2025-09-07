@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Translator • Upload</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Translate Documents (EN ⇄ FR)</h1>
+      <form action="/upload" method="post" enctype="multipart/form-data" class="card">
+        <label class="label">Choose files (.docx, .pdf, .txt)</label>
+        <input type="file" name="files" multiple accept=".txt,.pdf,.docx" />
+
+        <div class="row">
+          <label for="mode" class="label">Direction</label>
+          <select id="mode" name="mode">
+            <option value="auto" selected>Auto-detect</option>
+            <option value="en-fr">English → French</option>
+            <option value="fr-en">French → English</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">Translate</button>
+      </form>
+
+      <p class="muted">Files are saved locally in the <code>translated/</code> folder.</p>
+    </main>
+  </body>
+  </html>
+
